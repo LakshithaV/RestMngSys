@@ -1,0 +1,52 @@
+div.bookTable_wrapper {
+    width: 100%;
+    padding: 150px;
+    min-height: 100vh;
+    height: 100%;
+    background: #eee;
+}
+
+div.bookTable_holder {
+    margin: 0 auto;
+    max-width: 430px;
+    background: #fff;
+    padding: 10px 15px;
+}
+
+.title {
+    margin: 0;
+    color: #333333;
+    font-weight: 300;
+}
+
+label {
+    color: #444;
+    font-size: 14px;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 100;
+    margin-top: 10px;
+}
+
+
+.error {
+    color: red;
+    background: lightgrey;
+    font-size: 20px;
+    border-style: solid;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.success {
+    color: green;
+    background: lightgrey;
+    font-size: 20px;
+    border-style: solid;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+

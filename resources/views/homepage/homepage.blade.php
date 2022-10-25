@@ -77,7 +77,7 @@
                 <h1 class="font-weight-bold">The Hangout</h1>
             </div>
             <div class="actions">
-                <a href="#" class="btn-get-started bg-warning text-decoration-none">Book Table Now</a>
+                <a href="{{ route('book_tables.index') }}" class="btn-get-started bg-warning text-decoration-none">Book Table Now</a>
             </div>
         </div>
     </section>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\BookTable;
 use Auth;
 use Validator;
 use Illuminate\Http\Request;
@@ -30,7 +31,7 @@ class LoginController extends Controller
             'password' => $request->get('password')
         );
 
-        $records = Reservation::all();
+        $records = BookTable::all();
 
         if(Auth::attempt($user_data)){
             if(Auth::user()->role == 'manager')
