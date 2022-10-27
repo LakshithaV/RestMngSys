@@ -34,5 +34,6 @@ Route::get('/Done/{id}', [TableBookController::class, 'Done']);
 Route::resources([
     'book_tables' => TableBookController::class,
     'menu_items' => MenuItemController::class,
+    'users' => UserController::class,
     
 ]);

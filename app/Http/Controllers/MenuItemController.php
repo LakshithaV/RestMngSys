@@ -24,7 +24,7 @@ class MenuItemController extends Controller
      */
     public function create()
     {
-        //
+        return view('menuItems.createItem');
     }
 
     /**
