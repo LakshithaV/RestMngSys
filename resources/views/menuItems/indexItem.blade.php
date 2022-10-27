@@ -54,7 +54,7 @@
                                             <td>{{$item -> status}}</td>
                                             <td>{{$item -> description}}</td>
                                             <td>
-                                                <img src="{{asset($item->image)}}" class = "img img-responsive"/>
+                                                <img src="{{asset('app/public/images'.$item->image)}}" class = "img img-responsive"/>
                                             </td>
                                         </tr>
                                         @endforeach
