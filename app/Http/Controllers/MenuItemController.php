@@ -14,7 +14,8 @@ class MenuItemController extends Controller
      */
     public function index()
     {
-        
+        $Menuitems = MenuItem::all();
+        return view('menuItems.indexItem',compact('Menuitems'));
     }
 
     /**
@@ -47,12 +48,11 @@ class MenuItemController extends Controller
         if($request->hasFile('image')){
             $image = $request->file('image');
             $imagename = time() . '.' . $image->getClientOriginalExtension();
-            $request->image->move('foods', $imagename);
+            $request->image->move('images', $imagename);
         };
 
         MenuItem::create($request->all());
-        return redirect()->route('menuitems.index')->with('success message', 'Food Added!!');
-        
+        return redirect()->route('menu_items.index')->with('success message', 'Food Added!!');
     }
 
     /**
