@@ -45,11 +45,13 @@ class MenuItemController extends Controller
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        $requestData = $request->all();
-        $fileName = time().$request->file('image')->getClientOriginalName();
-        $path = $request->file('image')->storeAs('images', $fileName, 'public');
-        $requestData["image"] = '/storage/' .$path;
-        MenuItem::create($requestData);
+        if($request->hasFile('image')){
+            $image = $request->file('image');
+            $imagename = time() . '.' . $image->getClientOriginalExtension();
+            $request->image->move('images', $imagename);
+        };
+
+        MenuItem::create($request->all());
         return redirect()->route('menu_items.index')->with('success message', 'Food Added!!');
     }
 
