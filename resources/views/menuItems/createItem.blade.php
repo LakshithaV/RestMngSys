@@ -48,9 +48,12 @@
                                 <label >Price </label>
                                 <input type="text" name="price" class="form-control" placeholder="Enter price" autofocus>
                             </div>
-
                             
-
+                            <div class="form-group">
+                                <label >Category </label>
+                                <input type="text" name="category" class="form-control" placeholder="Enter Category" autofocus>
+                            </div>
+                            
                             <div class="form-group">
                                 <label>Description</label><br>
                                 <textarea name="description" rows="4" cols="50" placeholder="Enter Description" autofocus> </textarea>
