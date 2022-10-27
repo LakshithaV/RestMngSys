@@ -15,7 +15,7 @@ class UserController extends Controller
     public function index()
     {
         $employees=User::all();
-        return view('employee/addemployee',compact('employees'));
+        return view('employee/showEmployees',compact('employees'));
         //
     }
 
@@ -40,8 +40,8 @@ class UserController extends Controller
     {
         //
         $request->validate([
-            'firstName' => 'required',
-            'lastName' => 'required',
+            'firstname' => 'required',
+            'lastname' => 'required',
             'email' => 'required',
             'password' => 'required',
             'phone' => 'required',
@@ -52,7 +52,7 @@ class UserController extends Controller
         ]);
 
         User::create($request->all());
-        return redirect()->route('employee.index')->with('success','Employee created Successfully!');
+        return redirect()->route('users.index')->with('success','Employee created Successfully!');
     }
 
     /**
@@ -80,8 +80,8 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         $request->validate([
-            'firstName' => 'required',
-            'lastName' => 'required',
+            'firstname' => 'required',
+            'lastname' => 'required',
             'email' => 'required',
             'password' => 'required',
             'phone' => 'required',
@@ -92,14 +92,14 @@ class UserController extends Controller
         ]);
 
         $user->update($request->all());
-        return redirect()->route('employee.index')->with('success','employee update Successfully!');
+        return redirect()->route('users.index')->with('success','employee update Successfully!');
     }
 
     
     public function destroy(User $user)
     {
         $user->delete();
-        return redirect()->route('employee.index')->with('success','employee account deleted Successfully!');
+        return redirect()->route('users.index')->with('success','employee account deleted Successfully!');
         
     }
 }

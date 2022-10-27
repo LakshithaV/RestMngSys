@@ -13,16 +13,16 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ route('menu_items.create') }}">
                         <i class="pe-7s-note"></i>
                         <p>Add Food</p>
                     </a>
                 </li>
                 
                 <li>
-                    <a href="#">
+                    <a href="{{ route('users.index') }}">
                         <i class="pe-7s-note"></i>
-                        <p>Add Employee</p>
+                        <p>Show Employee</p>
                     </a>
                 </li>
 
@@ -43,7 +43,7 @@
         @elseif(Auth::user()->role == 'chef')
             <ul class="nav">
                 <li>
-                    <a href="{{ route('menuitems.create') }}">
+                    <a href="{{ route('menu_items.create') }}">
 
                         <i class="pe-7s-note"></i>
                         <p>Add Food</p>
