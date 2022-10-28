@@ -14,7 +14,8 @@ class MenuItemController extends Controller
      */
     public function index()
     {
-        
+        $menuitems = MenuItem::all();
+        return view('menuItems.menuItemIndex',compact('menuitems'));
     }
 
     /**
@@ -42,16 +43,25 @@ class MenuItemController extends Controller
             'description' => 'required',
             'status' => 'required',
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'quantity' => 'required',
+            'alert_stock' => 'required',
         ]);
 
-        if($request->hasFile('image')){
-            $image = $request->file('image');
-            $imagename = time() . '.' . $image->getClientOriginalExtension();
-            $request->image->move('foods', $imagename);
-        };
+        $imageName = time() . ".".$request->image->extension();
+        $request->image->move(public_path('images'), $imageName);
 
-        MenuItem::create($request->all());
-        return redirect()->route('menuitems.index')->with('success message', 'Food Added!!');
+
+        MenuItem::create([
+            'foodname' => $request->foodname,
+            'status' => $request->status,
+            'price' => $request->price,
+            'description' => $request->description,
+            'category' => $request->category,
+            'image' => $imageName,
+            'quantity' => $request->quantity,
+            'alert_stock' => $request->alert_stock,
+        ]);
+        return redirect()->route('menu_items.index')->with('success message', 'Food Added!!');
         
     }
 

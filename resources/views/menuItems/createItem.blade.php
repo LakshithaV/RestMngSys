@@ -64,21 +64,34 @@
                                 </select>
                             </div>
 
+                            <div class="form-group">
+                                <label>Category </label>
+                                <select name="category" class="form-control">
+                                    <option value="dessert">Dessert</option>
+                                    <option value="cake">Cake</option>
+                                    <option value="pizza">Pizza</option>
+                                    <option value="maincourses">Maincourses</option>
+                                    <option value="breakfast">Breakfast</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label >Quantity </label>
+                                <input type="text" name="quantity" class="form-control" placeholder="Enter quantity" autofocus>
+                            </div>
+
+                            <div class="form-group">
+                                <label >Alert  Stock </label>
+                                <input type="text" name="alert_stock" class="form-control" placeholder="Enter price" autofocus>
+                            </div>
+
                             <div class="form-group"> 
                                 <label for="image">Image</label>
-                                <input 
-                                    type="file" 
-                                    name="image" 
-                                    id="inputImage"
-                                    class="form-control @error('image') is-invalid @enderror">
-                
-                                @error('image')
-                                    <span class="text-danger">{{ $message }}</span>
-                                @enderror
+                                <input type="file" name="image" class="form-control" accept="image/*">
+                            </div>
 
-                                <div class="mb-3">
-                                    <button type="submit" class="btn btn-primary" value="save">Upload</button>
-                                </div>
+                            <div class="mb-3">
+                                <button type="submit" class="btn btn-primary" value="save">Add new Food</button>
                             </div>
                         </form>  
                     </div>
@@ -88,4 +101,5 @@
     </div>
 </div>
 @endsection
+
 

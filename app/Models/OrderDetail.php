@@ -8,4 +8,25 @@ use Illuminate\Database\Eloquent\Model;
 class OrderDetail extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'order_id',
+        'menuitem_id',
+        'unitprice',
+        'amount', 
+        'quantity',
+        'discount'
+    ];
+
+    public function menuitem()
+    {
+        return $this->belongsTo(MenuItem::class);
+    }
+
+    public function order()
+    {
+        return $this->belongsTo(Order::class);
+    }
+
+
 }

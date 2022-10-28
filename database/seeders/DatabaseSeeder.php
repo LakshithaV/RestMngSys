@@ -20,7 +20,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([BookTableSeeder::class,
-                    UserSeeder::class
+                    UserSeeder::class,
+                    MenuItemSeeder::class
     ]);
         
 

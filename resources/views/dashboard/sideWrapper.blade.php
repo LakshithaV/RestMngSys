@@ -13,9 +13,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('menu_items.create') }}">
+                    <a href="{{ route('menu_items.index') }}">
                         <i class="pe-7s-note"></i>
-                        <p>Add Food</p>
+                        <p>Food Items</p>
                     </a>
                 </li>
                 
@@ -43,15 +43,15 @@
         @elseif(Auth::user()->role == 'chef')
             <ul class="nav">
                 <li>
-                    <a href="{{ route('menu_items.create') }}">
+                    <a href="{{ route('menu_items.index') }}">
 
                         <i class="pe-7s-note"></i>
-                        <p>Add Food</p>
+                        <p>Food Items</p>
                     </a>
                 </li>
                 
                 <li>
-                    <a href="#">
+                    <a href="{{ route('orders.index') }}">
                         <i class="pe-7s-note2"></i>
                         <p>Orders</p>
                     </a>

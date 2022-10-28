@@ -17,6 +17,9 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/dashboard/style.css')}}">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+    @livewireStyles
+
 </head>
 <body>
     <div class="wrapper">
@@ -58,5 +61,7 @@
 
 <!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
 <script type="text/javascript" src="/js/dashboard/demo.js"></script>
+
+@livewireScripts
 
 </html>
