@@ -7,28 +7,22 @@
         @if(Auth::user()->role == 'manager')
             <ul class="nav">
                 <li>
-                    <a href="#">
-                        <i class="pe-7s-graph"></i>
-                        <p>Menu</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
+                    <a href="{{ route('menu_items.index') }}">
                         <i class="pe-7s-note"></i>
-                        <p>Add Food</p>
+                        <p>Food Items</p>
                     </a>
                 </li>
                 
                 <li>
-                    <a href="#">
+                    <a href="{{ route('users.index') }}">
                         <i class="pe-7s-note"></i>
-                        <p>Add Employee</p>
+                        <p>Employees</p>
                     </a>
                 </li>
 
 
                 <li>
-                    <a href="">
+                    <a href="{{ route('orders.index') }}">
                         <i class="pe-7s-note2"></i>
                         <p>Orders</p>
                     </a>
@@ -39,19 +33,25 @@
                         <p>Table reservations</p>
                     </a>
                 </li>
+                <li>
+                    <a href="#">
+                        <i class="pe-7s-note"></i>
+                        <p>Tables</p>
+                    </a>
+                </li>
             </ul>
         @elseif(Auth::user()->role == 'chef')
             <ul class="nav">
                 <li>
-                    <a href="{{ route('menuitems.create') }}">
+                    <a href="{{ route('menu_items.index') }}">
 
                         <i class="pe-7s-note"></i>
-                        <p>Add Food</p>
+                        <p>Food Items</p>
                     </a>
                 </li>
                 
                 <li>
-                    <a href="#">
+                    <a href="{{ route('orders.index') }}">
                         <i class="pe-7s-note2"></i>
                         <p>Orders</p>
                     </a>

@@ -1867,6 +1867,7 @@ body > .navbar-collapse[data-color="purple"]:after {
 }
 .card .content {
   padding: 15px 15px 10px 15px;
+  align: center;
 }
 .card .header {
   padding: 15px 15px 0;

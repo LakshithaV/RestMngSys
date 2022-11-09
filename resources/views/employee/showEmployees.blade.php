@@ -1,42 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Hangout</title>
+@extends('dashboard.header')
 
-    <!-- Bootstrap core CSS     -->
-    <link rel="stylesheet" href="{{ asset('css/dashboard/bootstrap.min.css')}}">
-    <!-- Animation library for notifications   -->
-    <link rel="stylesheet" href="{{ asset('css/dashboard/animate.min.css')}}">
-    <!--  Light Bootstrap Table core CSS    -->
-    <link rel="stylesheet" href="{{ asset('css/dashboard/light-bootstrap-dashboard.css')}}">
-    <!--     Fonts and icons     -->
-	<link rel="stylesheet" href="{{ asset('css/dashboard/pe-icon-7-stroke.css')}}">
-    <link rel="stylesheet" href="{{ asset('css/dashboard/style.css')}}">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-
-</head>
-<body>
-    <div class="wrapper">
-            <!-- Side Bar-->
-            <div class="sidebar" data-color="#000">
-                @include('dashboard/sideWrapper')
-
-                <!-- Main Panel -->
-                <div class="main-panel">
-                    
-                    @include('dashboard/mainPanel')
-
-                    <div class="content" id="rest">
+@section('content')
+    
+<div class="content" id="rest">
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="card">
 
-                                </br>
+                                <br>
 
                                 @if($message = Session::get('error'))
                                 <div class='error'>
@@ -50,7 +22,7 @@
                                     </div>
                                 @endif
                                 <br>
-                                <a class="btn btn-secondary" href="{{route('employee.create')}}"> Create New Employee</a>
+                                <a class="btn btn-secondary" href="{{route('users.create')}}"> Create New Employee</a>
                                 
                                 <div class="content table-responsive table-full-width">
                                 
@@ -70,9 +42,8 @@
                                         <tbody>
                                         @foreach($employees as $emp)
                                         <tr>
-                                            <td>{{ $emp->firstName }}</td>
-                                            <td>{{ $emp->lastName }}</td>
-                                            
+                                            <td>{{ $emp->firstname }}</td>
+                                            <td>{{ $emp->lastname }}</td>
                                             <td>{{ $emp->email }}</td>
                                             <td>{{ $emp->phone }}</td>
                                             <td>{{ $emp->address }}</td>
@@ -80,11 +51,11 @@
                                             <td>{{ $emp->role }}</td>
                                             <td>{{ $emp->salary }}</td>
                                             <td>
-                                                <form action="{{route('employee.destroy',$emp->id)}}" method="POST">
+                                                <form action="{{route('users.destroy',$emp->id)}}" method="POST">
    
-                                                    <a class="btn btn-info" href="{{route('employee.show',$emp->id)}}">Show</a>
+                                                    <a class="btn btn-info" href="{{route('users.show',$emp->id)}}">Show</a>
 
-                                                    <a class="btn btn-primary" href="{{route('employee.edit',$emp->id)}}">Edit</a>
+                                                    <a class="btn btn-primary" href="{{route('users.edit',$emp->id)}}">Edit</a>
 
                                                     @csrf
                                                         @method('DELETE')
@@ -106,9 +77,5 @@
 
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
+@endsection
+

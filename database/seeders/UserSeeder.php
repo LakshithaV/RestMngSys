@@ -9,7 +9,7 @@ use Illuminate\Support\Str;
 use App\Models\BookTable;
 use App\Models\User;
 
-class BookTableSeeder extends Seeder
+class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.

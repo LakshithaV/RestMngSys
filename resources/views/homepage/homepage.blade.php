@@ -59,10 +59,13 @@
                             <a href="#" class="nav-link">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Categories</a>
+                            <a href="#" class="nav-link">Book Table</a>
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">Meals</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Contact Us</a>
                         </li>
                     </ul>
                 </div>

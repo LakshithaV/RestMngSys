@@ -20,8 +20,10 @@ return new class extends Migration
             $table->enum('status', ['available', 'unavailable']);
             $table->integer('price');
             $table->string('description');
-            $table->enum('category',['dessert', 'cake', 'pizza', 'maincourses', 'breakfast']);
-            $table->string('image', 300);
+            $table->enum('category',['dessert', 'cake', 'pizza', 'lunch', 'breakfast']);
+            $table->integer('quantity');
+            $table->integer('alert_stock')->default('50');
+            $table->string('image');
         });
     }
 

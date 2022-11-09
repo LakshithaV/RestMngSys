@@ -15,5 +15,17 @@ class MenuItem extends Model
         'description',
         'category',
         'image',
+        'quantity',
+        'alert_stock',
     ];
+
+    public function orderdetail()
+    {
+        return $this->hasMany(OrderDetail::class);
+    }
+
+    public function cart()
+    {
+        return $this->hasMany(Cart::class);
+    }
 }
