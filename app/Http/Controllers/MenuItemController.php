@@ -73,7 +73,7 @@ class MenuItemController extends Controller
      */
     public function show(MenuItem $menuItem)
     {
-        //
+        return view('menuItems.showItem',compact('menuItem'));
     }
 
     /**
@@ -84,7 +84,7 @@ class MenuItemController extends Controller
      */
     public function edit(MenuItem $menuItem)
     {
-        //
+        return view('menuItems.editItem',compact('menuItem'));
     }
 
     /**
@@ -96,7 +96,19 @@ class MenuItemController extends Controller
      */
     public function update(Request $request, MenuItem $menuItem)
     {
-        //
+        $request->validate([
+            'foodname' => 'required',
+            'price' => 'required',
+            'category' => 'required',
+            'description' => 'required',
+            'status' => 'required',
+            'quantity' => 'required',
+            'alert_stock' => 'required',
+        ]);
+
+
+        $menuItem->update($request->all());
+        return redirect()->route('menu_items.index')->with('success message', 'Food Added!!');
     }
 
     /**
@@ -107,6 +119,7 @@ class MenuItemController extends Controller
      */
     public function destroy(MenuItem $menuItem)
     {
-        //
+        $menuItem->delete();
+        return redirect()->route('menu_items.index')->with('success','Product deleted Successfully!');
     }
 }

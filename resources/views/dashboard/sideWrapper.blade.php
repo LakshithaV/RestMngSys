@@ -7,12 +7,6 @@
         @if(Auth::user()->role == 'manager')
             <ul class="nav">
                 <li>
-                    <a href="#">
-                        <i class="pe-7s-graph"></i>
-                        <p>Menu</p>
-                    </a>
-                </li>
-                <li>
                     <a href="{{ route('menu_items.index') }}">
                         <i class="pe-7s-note"></i>
                         <p>Food Items</p>
@@ -22,13 +16,13 @@
                 <li>
                     <a href="{{ route('users.index') }}">
                         <i class="pe-7s-note"></i>
-                        <p>Show Employee</p>
+                        <p>Employees</p>
                     </a>
                 </li>
 
 
                 <li>
-                    <a href="">
+                    <a href="{{ route('orders.index') }}">
                         <i class="pe-7s-note2"></i>
                         <p>Orders</p>
                     </a>
@@ -37,6 +31,12 @@
                     <a href="{{ url('showAllBookTable') }}">
                         <i class="pe-7s-note2"></i>
                         <p>Table reservations</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="pe-7s-note"></i>
+                        <p>Tables</p>
                     </a>
                 </li>
             </ul>

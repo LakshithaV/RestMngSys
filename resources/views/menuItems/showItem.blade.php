@@ -1,12 +1,3 @@
-'foodname',
-        'status',
-        'price',
-        'description',
-        'category',
-        'image',
-        'quantity',
-        'alert_stock',
-
 @extends('dashboard.header')
 
 @section('content')
@@ -19,49 +10,49 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Name : </strong>
-                        {{$fooditem->foodname}} 
+                        {{$menuItem->foodname}} 
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                        <strong>Last Name : </strong>
-                        {{$fooditem->lastlame}}
+                        <strong>Status : </strong>
+                        {{$menuItem->status}}
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                        <strong>Email : </strong>
-                        {{$fooditem->email}} 
+                        <strong>Price : </strong>
+                        {{$menuItem->price}} 
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                        <strong>Phone : </strong>
-                        {{$fooditem->phone}} 
+                        <strong>Description : </strong>
+                        {{$menuItem->description}} 
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                        <strong>Address : </strong>
-                        {{$fooditem->address}} 
+                        <strong>Category : </strong>
+                        {{$menuItem->category}} 
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                        <strong>Gender : </strong>
-                        {{$fooditem->gender}} 
+                        <strong>Quantity : </strong>
+                        {{$menuItem->quantity}} 
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                        <strong>Role : </strong>
-                        {{$fooditem->role}}
+                        <strong>Alert Stock : </strong>
+                        {{$menuItem->alert_stock}}
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                        <strong>Salary : </strong>
-                        {{$fooditem->salary}}
+                        <strong>Image : </strong>
+                        <img src="{{asset('images/'.$menuItem->image)}}" class="card-img-top" height="30%" width="250px">
                     </div>
                 </div>
                 

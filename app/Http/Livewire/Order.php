@@ -41,16 +41,16 @@ class Order extends Component
 
     public function InserttoCart()
     {
-        $countProduct = MuduItem::where('id', $this->product_code)->first();
+        $countProduct = MenuItem::where('id', $this->product_code)->first();
     
         if (!$countProduct){
-            return $this->message = 'Product Not Found';
+            return session()->flash('error', 'Product Not Found');
         }
 
         $countCartProduct = Cart::where('product_id', $this->product_code)->count();
     
         if ($countCartProduct > 0) {
-            return $this->message = 'Product ' .$countProduct->product_name .' alredy exist in cart please add quantity';
+            return session()->flash('info', 'Product ' .$countProduct->foodname .' alredy exist in cart please add quantity');
         }
         $add_to_cart = new Cart;
         $add_to_cart->product_id = $countProduct->id;
@@ -63,7 +63,7 @@ class Order extends Component
 
         $this->product_code = '';
 
-        return $this->message = 'Product Added Successfully';
+        return session()->flash('success', 'Product Added Successfully');
 
     }   
 
@@ -72,7 +72,7 @@ class Order extends Component
         $deleteCart = Cart::find($cartId);
         $deleteCart->delete();
 
-        return $this->message = 'Product Removed Successfully';
+        return session()->flash('success', 'Product Removed Successfully');
 
         $this->productInCart = $this->productInCart->except($cartId);
     }

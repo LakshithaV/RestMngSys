@@ -20,7 +20,6 @@ return new class extends Migration
             $table->integer('quantity');
             $table->integer('unitprice');
             $table->integer('amount');
-            $table->integer('discount');
             $table->timestamps();
         });
     }

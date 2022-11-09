@@ -15,7 +15,6 @@ class OrderDetail extends Model
         'unitprice',
         'amount', 
         'quantity',
-        'discount'
     ];
 
     public function menuitem()

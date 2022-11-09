@@ -23,7 +23,6 @@
             '<td><select class="form-control product_id" name="product_id[]">' + product + '</select></td>' + 
             '<td><input type="number" name="quantity[]" class="form-control quantity"></td>' +
             '<td><input type="number" name="price[]" class="form-control price"></td>' +
-            '<td><input type="number" name="discount[]" class="form-control discount"></td>' +
             '<td><input type="number" name="total_amount[]" class="form-control total_amount"></td>' +
             '<td><a class="btn btn-danger btn-sm delete rounded-circle"><i class="fa da-time-circle"></a></td>'
         $('.addMoreProduct').append(tr);
@@ -48,19 +47,17 @@
             var price = tr.find('.product_id option:selected').attr('data-price');
             tr.find('.price').val(price);
             var qty = tr.find('.quantity').val() - 0;
-            var disc = tr.find('.discount').val() - 0;
             var price = tr.find('.price').val() - 0;
             var total_amount = (qty * price) - ((qty * price * disc) / 100);
             tr.find('.total_amount').val(total_amount);
             TotalAmount();
         });
 
-        $('.addMoreProduct').delegate('.quantity, .discount', 'keyup', function(){
+        $('.addMoreProduct').delegate('.quantity, 'keyup', function(){
             var tr = $(this).parent().parent();
             var qty = tr.find('.quantity').val() - 0;
-            var disc = tr.find('.discount').val() - 0;
             var price = tr.find('.price').val() - 0;
-            var total_amount = (qty * price) - ((qty * price * disc) / 100);
+            var total_amount = (qty * price);
             tr.find('.total_amount').val(total_amount);
             TotalAmount();
         });

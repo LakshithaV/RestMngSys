@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\TableBookController;
 use App\Http\Controllers\MenuItemController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,5 +36,6 @@ Route::resources([
     'book_tables' => TableBookController::class,
     'menu_items' => MenuItemController::class,
     'users' => UserController::class,
+    'orders' => OrderController::class,
     
 ]);
