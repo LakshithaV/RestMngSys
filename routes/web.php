@@ -6,6 +6,8 @@ use App\Http\Controllers\TableBookController;
 use App\Http\Controllers\MenuItemController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\TableController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,10 +34,23 @@ Route::get('/Confirm/{id}', [TableBookController::class, 'Confirm']);
 Route::get('/Cancelled/{id}', [TableBookController::class, 'Cancelled']);
 Route::get('/Done/{id}', [TableBookController::class, 'Done']);
 
+Route::get('/showOrders', [OrderController::class, 'showOrders'])->name('showOrders');
+Route::get('/cancel/{id}', [OrderController::class, 'cancel'])->name('cancel');
+Route::get('/done/{id}', [OrderController::class, 'done'])->name('done');
+
+Route::get('/Available/{id}', [TableController::class, 'Available'])->name('Available');
+Route::get('/Occupied/{id}', [TableController::class, 'Occupied'])->name('Occupied');
+
+Route::get('/showProfile', [UserController::class, 'showProfile']);
+Route::get('/resetPwd', [UserController::class, 'resetPwd']);
+Route::post('/resetPwdDB', [UserController::class, 'resetPwdDB']);
+
 Route::resources([
     'book_tables' => TableBookController::class,
     'menu_items' => MenuItemController::class,
     'users' => UserController::class,
     'orders' => OrderController::class,
+    'transactions' => TransactionController::class,
+    'tables' => TableController::class,
     
 ]);

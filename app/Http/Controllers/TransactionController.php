@@ -2,10 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Table;
+use App\Models\Transaction;
+use App\Models\User;
+use App\Models\Order;
 use Illuminate\Http\Request;
+use DB;
+use Auth;
 
-class TableController extends Controller
+
+class TransactionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,10 +19,15 @@ class TableController extends Controller
      */
     public function index()
     {
-        $tables = Table::all();
+        $transacts = DB::table('transactions')
+            ->join('users', 'transactions.user_id', '=', 'users.id')
+            ->select('transactions.order_id', 'transactions.paid_amount', 'transactions.balance', 'transactions.transac_date', 'transactions.transac_amount', 'transactions.payment_method', 'users.firstname')
+          
+            ->get();
 
-        return view('tables.index', compact('tables'));
+        return view('transaction.index', compact('transacts'));
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -43,21 +53,21 @@ class TableController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Table  $table
+     * @param  \App\Models\Transaction  $transaction
      * @return \Illuminate\Http\Response
      */
-    public function show(Table $table)
+    public function show(Transaction $transaction)
     {
-        return view('tables.show', compact('table'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Table  $table
+     * @param  \App\Models\Transaction  $transaction
      * @return \Illuminate\Http\Response
      */
-    public function edit(Table $table)
+    public function edit(Transaction $transaction)
     {
         //
     }
@@ -66,10 +76,10 @@ class TableController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Table  $table
+     * @param  \App\Models\Transaction  $transaction
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Table $table)
+    public function update(Request $request, Transaction $transaction)
     {
         //
     }
@@ -77,25 +87,11 @@ class TableController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Table  $table
+     * @param  \App\Models\Transaction  $transaction
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Table $table)
+    public function destroy(Transaction $transaction)
     {
         //
-    }
-
-    public function Occupied(Request $table)
-    {
-        Table::find($table->id)->update(array('Status' => 'Occupied'));
-
-        return redirect()->back();
-    }
-
-    public function Available(Request $table)
-    {
-        Table::find($table->id)->update(array('Status' => 'Available'));
-
-        return redirect()->back();
     }
 }

@@ -7,59 +7,65 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
+                    <div class="header">
+                        <h4 class="title">Employee Profile</h4>
+                    </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Name : </strong>
-                        {{$user->firstname}} 
+                        {{ Auth::user()->firstname }}
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Last Name : </strong>
-                        {{$user->lastname}}
+                        {{Auth::user()->lastname}}
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Email : </strong>
-                        {{$user->email}} 
+                        {{Auth::user()->email}} 
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Phone : </strong>
-                        {{$user->phone}} 
+                        {{Auth::user()->phone}} 
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Address : </strong>
-                        {{$user->address}} 
+                        {{Auth::user()->address}} 
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Gender : </strong>
-                        {{$user->gender}} 
+                        {{Auth::user()->gender}} 
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Role : </strong>
-                        {{$user->role}}
+                        {{Auth::user()->role}}
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Salary : </strong>
-                        {{$user->salary}}
+                        {{Auth::user()->salary}}
                     </div>
                 </div>
                 
-
-                <div class="btn btn-primary">
-                   <a href="{{route('users.index')}}" Type="button">Back</a>
-                </div>
+                <div >
+             
+                   <a class="btn btn-primary" href="{{ url('showProfile') }}" Type="button">Back</a>
+                
+                
+                    <a class="btn btn-danger" href="{{ url('resetPwd') }}" Type="button">Reset Password</a>
+                 </div>
 
             </div>
         </div>

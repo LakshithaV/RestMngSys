@@ -55,6 +55,7 @@ class OrderController extends Controller
             $orders = new Order;
             $orders->name = $request->customer_name;
             $orders->phone = $request->customer_phone;
+            $orders->status = $request->status;
             $orders->save();
 
             $order_id = $orders->id;
@@ -104,7 +105,14 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        //
+        $orderDetails = DB::table('order_details')
+            ->join('orders', 'order_details.order_id', '=', 'orders.id')
+            ->join('menu_items', 'order_details.product_id', '=', 'menu_items.id')
+            ->select('order_details.product_id', 'order_details.quantity', 'order_details.unitprice', 'order_details.amount', 'menu_items.foodname')
+            ->where('order_details.order_id', $order->id)           
+            ->get();
+
+            return view('orders.show',compact('order', 'orderDetails'));
     }
 
     /**
@@ -139,5 +147,24 @@ class OrderController extends Controller
     public function destroy(Order $order)
     {
         //
+    }
+
+    public function showOrders(){
+        $orders = Order::all();
+        return view('orders.showOrders',compact('orders'));
+    }
+
+    public function cancel(Request $order)
+    {
+        Order::find($order->id)->update(array('status' => 'Cancelled'));
+
+        return redirect()->route('showOrders')->with('success', "Order Cancelled");
+    }
+
+    public function done(Request $order)
+    {
+        Order::find($order->id)->update(array('status' => 'Done'));
+
+        return redirect()->route('showOrders')->with('success', "Order successfull!");
     }
 }

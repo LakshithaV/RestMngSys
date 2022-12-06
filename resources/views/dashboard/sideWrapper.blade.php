@@ -24,7 +24,7 @@
                 <li>
                     <a href="{{ route('orders.index') }}">
                         <i class="pe-7s-note2"></i>
-                        <p>Orders</p>
+                        <p>Cashire</p>
                     </a>
                 </li>
                 <li>
@@ -34,42 +34,71 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ route('tables.index') }}">
                         <i class="pe-7s-note"></i>
                         <p>Tables</p>
                     </a>
                 </li>
+                <li>
+                    <a href="{{ route('transactions.index') }}">
+                        <i class="pe-7s-note"></i>
+                        <p>Transactions</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{url('showOrders') }}">
+                        <i class="pe-7s-note"></i>
+                        <p>Orders</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{url('showProfile') }}">
+                        <i class="pe-7s-note"></i>
+                        <p>Profile</p>
+                    </a>
+                </li>
+                
             </ul>
         @elseif(Auth::user()->role == 'chef')
             <ul class="nav">
                 <li>
                     <a href="{{ route('menu_items.index') }}">
-
                         <i class="pe-7s-note"></i>
                         <p>Food Items</p>
                     </a>
                 </li>
                 
                 <li>
-                    <a href="{{ route('orders.index') }}">
-                        <i class="pe-7s-note2"></i>
+                    <a href="{{url('showOrders') }}">
+                        <i class="pe-7s-note"></i>
                         <p>Orders</p>
                     </a>
                 </li>
             </ul>
         @elseif(Auth::user()->role == 'waiter')
             <ul class="nav">
-                
                 <li>
-                    <a href="#">
+                    <a href="{{ route('orders.index') }}">
                         <i class="pe-7s-note2"></i>
-                        <p>Orders</p>
+                        <p>Cashire</p>
                     </a>
                 </li>
                 <li>
-                    <a href="#rest">
+                    <a href="{{ url('showAllBookTable') }}">
                         <i class="pe-7s-note2"></i>
                         <p>Table reservations</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('tables.index') }}">
+                        <i class="pe-7s-note"></i>
+                        <p>Tables</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{url('showOrders') }}">
+                        <i class="pe-7s-note"></i>
+                        <p>Orders</p>
                     </a>
                 </li>
             </ul>

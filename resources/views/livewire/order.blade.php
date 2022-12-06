@@ -122,6 +122,7 @@
                                             <input type="number" name="customer_phone" id="" class="form-control">
                                         </div>
                                     </td>
+                                    <input type="hidden" name="status" id="" value="Pending">
                                 </tr>
                             </table>
 

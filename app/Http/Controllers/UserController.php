@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class UserController extends Controller
 {
@@ -66,6 +69,11 @@ class UserController extends Controller
         return view('employee.showEmployee',compact('user'));
     }
 
+    public function showProfile()
+    {
+        return view('profile.index');
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -101,5 +109,30 @@ class UserController extends Controller
         $user->delete();
         return redirect()->route('users.index')->with('success','employee account deleted Successfully!');
         
+    }
+
+    public function resetPwd(){  
+        return view('profile.resetPwd');
+    }
+
+    public function resetPwdDB(Request $request){
+        $this->validate($request, [
+            'newPassword' => 'required|alphaNum|min:5',
+            'oldPassword' => 'required|alphaNum|min:5',
+            'confirmPassword' => 'required|alphaNum|min:5|same:newPassword',
+        ]);
+
+        $curr_user = Auth::user();
+
+        if(Hash::check($request->oldPassword, $curr_user->password)){
+            $curr_user->update([
+                'password' => Hash::make($request->get('newPassword')),
+            ]);
+
+            return redirect()->back()->with('success', 'Password Reset Successfully');
+        }
+        else{
+            return redirect()->back()->with('error', 'Incorrect Old Password');
+        }
     }
 }

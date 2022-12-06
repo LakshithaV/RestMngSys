@@ -23,16 +23,27 @@
     .pqrs{
       margin: 1rem;
       height: 8rem;
+      width: 25rem;
+      text-align: center;
     }
     
     
-       </style>
-       <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    </head>
-    <body>
-        <div routerLink="/Admin-show-wardpage/614ed870a24b974fc05038dc" class="col-3 card pqrs zoom d-flex justify-content-center d-flex align-items-center" style="background-color: rgba(255, 0, 128, 0.26);">
-            <h1 style="font-family: Lemon" >Ward 2</h1>
-          </div>
+  </style>
+
+    @foreach($tables as $table)
+    <a href="{{route('tables.show',$table->id)}}">
+      @if($table->Status == 'Available')
+        <div class="col-md-4 pqrs zoom " style="background-color: rgba(0, 255, 0, 0.26);">
+          <h1 style="color: black">Table {{ $table->id }}</h1>
+        </div>
+        @else
+        <div class="col-md-4 pqrs zoom " style="background-color: rgba(255, 0, 0, 0.26);">
+          <h1 style="color: black">Table {{ $table->id }}</h1>
+        </div>
+      @endif
+      
+    </a>
+    @endforeach
+  
 
 @endsection
