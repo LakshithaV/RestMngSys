@@ -61,9 +61,6 @@
                 
                 <div >
              
-                   <a class="btn btn-primary" href="{{ url('showProfile') }}" Type="button">Back</a>
-                
-                
                     <a class="btn btn-danger" href="{{ url('resetPwd') }}" Type="button">Reset Password</a>
                  </div>
 
