@@ -34,11 +34,11 @@
     <a href="{{route('tables.show',$table->id)}}">
       @if($table->Status == 'Available')
         <div class="col-md-4 pqrs zoom " style="background-color: rgba(0, 255, 0, 0.26);">
-          <h1 style="color: black">Table {{ $table->id }}</h1>
+          <h1 style="color: black; font-size:40px">Table {{ $table->id }}</h1>
         </div>
         @else
         <div class="col-md-4 pqrs zoom " style="background-color: rgba(255, 0, 0, 0.26);">
-          <h1 style="color: black">Table {{ $table->id }}</h1>
+          <h1 style="color: black; font-size:40px">Table {{ $table->id }}</h1>
         </div>
       @endif
       
