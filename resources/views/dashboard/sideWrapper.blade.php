@@ -23,13 +23,13 @@
 
                 <li>
                     <a href="{{ route('orders.index') }}">
-                        <i class="pe-7s-note2"></i>
+                        <i class="pe-7s-note"></i>
                         <p>Cashire</p>
                     </a>
                 </li>
                 <li>
                     <a href="{{ url('showAllBookTable') }}">
-                        <i class="pe-7s-note2"></i>
+                        <i class="pe-7s-note"></i>
                         <p>Table reservations</p>
                     </a>
                 </li>
@@ -84,13 +84,13 @@
             <ul class="nav">
                 <li>
                     <a href="{{ route('orders.index') }}">
-                        <i class="pe-7s-note2"></i>
+                        <i class="pe-7s-note"></i>
                         <p>Cashire</p>
                     </a>
                 </li>
                 <li>
                     <a href="{{ url('showAllBookTable') }}">
-                        <i class="pe-7s-note2"></i>
+                        <i class="pe-7s-note"></i>
                         <p>Table reservations</p>
                     </a>
                 </li>

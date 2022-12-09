@@ -91,7 +91,6 @@ class UserController extends Controller
             'firstname' => 'required',
             'lastname' => 'required',
             'email' => 'required',
-            'password' => 'required',
             'phone' => 'required',
             'address' => 'required',
             'gender' => 'required',

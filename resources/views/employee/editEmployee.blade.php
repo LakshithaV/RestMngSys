@@ -57,12 +57,6 @@
                                 <label>Email</label>
                                 <input type="email" name="email" class="form-control" value="{{$user->email}}">
                             </div>
-
-                            <div class="form-group">
-                                <label>Password</label>
-                                <input type="text" name="password" class="form-control" value="{{$user->password}}">
-                            </div>
-
                             <div class="form-group">
                                 <label>Phone</label>
                                 <input type="text" name="phone" class="form-control" value="{{$user->phone}}" autofocus>
