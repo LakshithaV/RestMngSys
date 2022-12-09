@@ -70,7 +70,7 @@
                                     <option value="dessert">Dessert</option>
                                     <option value="cake">Cake</option>
                                     <option value="pizza">Pizza</option>
-                                    <option value="maincourses">Maincourses</option>
+                                    <option value="maincourses">Lunch</option>
                                     <option value="breakfast">Breakfast</option>
                                 </select>
                             </div>
