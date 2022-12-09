@@ -18,7 +18,7 @@
    
     <link rel="stylesheet" href="{{ asset('css/auth/loginStyle.css')}}">
 
-    <title>The Hangout|Employee Login</title>
+    <title>The Hangout|Employee Login </title>
 </head>
 <body>
     <div class="login_wrapper">
