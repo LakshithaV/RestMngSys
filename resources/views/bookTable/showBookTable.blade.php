@@ -44,6 +44,8 @@
                     please let us know. We look forward to
                     serving you.</p>
             @endif
+
+            <a class="btn btn-info" href="{{url('/')}}">Home</a>
         </div>
     </div>
     

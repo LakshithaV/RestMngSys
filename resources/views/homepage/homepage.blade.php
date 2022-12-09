@@ -59,13 +59,13 @@
                             <a href="#" class="nav-link">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Book Table</a>
+                            <a href="#hero" class="nav-link">Book Table</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Meals</a>
+                            <a href="#variety" class="nav-link">About</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Contact Us</a>
+                            <a href="#menu" class="nav-link">Menu</a>
                         </li>
                     </ul>
                 </div>
@@ -86,7 +86,70 @@
     </section>
     <!---End of Hero Section-->
 
-Ilham
+   <!--Variety----->
+   <section id="variety" class="variety pt-4">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 d-flex align-items-stretch ">
+                <div class="card">
+                    <div class="card-img">
+                        <img src="../../images/FrontImage.jpg" alt="">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            The Hangout
+                        </h5>
+                        <p class="card-text">
+                            Bejeweled as one of the finest hotel located in Kurunegala, we welcome you to The Hangout in Kurunegala. With easy access for your shopping, entertainment and business needs, we will ensure your stay is perfect and your experiences are complete.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+   </section>
+
+   <<!--Food Menu-->
+   <div class="container" id="menu">
+    <div class=" row justify-content-center pb-5">
+        <div class="col-md-7 heading-section text-center">
+            <h2 class="font-weight-bold text-color glow">
+                Explore our menu
+            </h2>
+        </div>
+    </div>
+    <div class="food-menu-card">
+        <div class="media-body align-self-center g-pl-10">
+            <div class="d-flex justify-content-between mb10">
+                <h3>All our dishes are prepared by high profile culinary teams with worldwide experience and with a very unique and eye catching interior and décor. you are sure to enjoy your sophisticated evening.</h3>
+                <div class="align-self-center">
+                    <a href="../../images/Main Menu.pdf"><img src="../../images/menu.jpg"></a>
+                </div>
+            </div>
+        </div>
+   </div>
+   </div>
+   
+<!-- Footer-->
+<footer class="footer py-4">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-4 text-lg-left">Copyright © The Hangout 2022</div>
+            <div class="col-lg-4 my-3 my-lg-0">
+                <a class="btn btn-dark btn-social mx-2" href="#" target="new"><i class="fab fa-instagram"></i></a>
+                <a class="btn btn-dark btn-social mx-2" href="#" target="new"><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-dark btn-social mx-2" href="$" target="new"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="col-lg-4 text-lg-right">
+                <a class="mr-3" href="#!">Privacy Policy</a>
+                <a href="#!">Terms of Use</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+   
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

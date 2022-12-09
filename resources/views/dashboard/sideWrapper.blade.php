@@ -67,11 +67,16 @@
                         <p>Food Items</p>
                     </a>
                 </li>
-                
                 <li>
                     <a href="{{url('showOrders') }}">
                         <i class="pe-7s-note"></i>
                         <p>Orders</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{url('showProfile') }}">
+                        <i class="pe-7s-note"></i>
+                        <p>Profile</p>
                     </a>
                 </li>
             </ul>
@@ -99,6 +104,12 @@
                     <a href="{{url('showOrders') }}">
                         <i class="pe-7s-note"></i>
                         <p>Orders</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{url('showProfile') }}">
+                        <i class="pe-7s-note"></i>
+                        <p>Profile</p>
                     </a>
                 </li>
             </ul>
